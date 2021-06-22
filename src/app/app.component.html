@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="header">
+  <span>Kanboard</span>
+</mat-toolbar>
+
+<div style="margin-left: 30px;">
+  <app-list [jobLists]="jobLists"></app-list>
+  <app-add-list
+    (onAddNewList)="addNewList($event)"
+  ></app-add-list>
+
+</div>
