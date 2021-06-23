@@ -1,0 +1,24 @@
+
+<div cdkDropListGroup>
+  <mat-card class="container" *ngFor="let list of jobLists; let i = index">
+      <h2>{{ list.name }} ({{ list.jobs.length }})</h2>
+
+      <div
+        class="list"
+        cdkDropList
+        [cdkDropListData]="list.jobs"
+        (cdkDropListDropped)="drop($event)">
+        <div class="box" *ngFor="let job of list.jobs ; let j = index" cdkDrag>{{job}}</div>
+      </div>
+      <div class="form">
+        <mat-form-field class="fill-width">
+          <input matInput placeholder="New job" [(ngModel)]="list.newJob">
+        </mat-form-field>
+        <div class="button">
+          <button mat-flat-button color="primary" (click) = "addNewJob(i, list.newJob)">Add</button>
+        </div>
+      </div>
+
+  </mat-card>
+</div>
+
