@@ -1,0 +1,9 @@
+<section>
+  <mat-form-field appearance="fill">
+    <mat-label>New List</mat-label>
+    <input matInput [(ngModel)] = "newList">
+  </mat-form-field>
+  <div class="example-button-row">
+    <button  mat-raised-button color="primary" (click)="addNewList(newList)">Add</button>
+  </div>
+</section>
